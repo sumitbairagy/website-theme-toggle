@@ -1,0 +1,77 @@
+:root {
+    color-scheme: light;
+
+    --theme-bg: #ffffff;
+    --theme-surface: #f8fafc;
+    --theme-text: #20252d;
+    --theme-muted: #64748b;
+    --theme-border: #e2e8f0;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --theme-bg: #0f172a;
+    --theme-surface: #1e293b;
+    --theme-text: #f1f5f9;
+    --theme-muted: #94a3b8;
+    --theme-border: #334155;
+}
+
+html, body {
+    background-color: var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+body, header, footer, main, section, nav, article, aside {
+    transition: background-color .3s ease, color .3s ease;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] header,
+[data-theme="dark"] footer,
+[data-theme="dark"] main,
+[data-theme="dark"] section,
+[data-theme="dark"] nav,
+[data-theme="dark"] article,
+[data-theme="dark"] aside {
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+}
+
+/* Common backgrounds */
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-slate-50,
+[data-theme="dark"] .bg-gray-50,
+[data-theme="dark"] .bg-gray-100 {
+    background-color: var(--theme-surface) !important;
+}
+
+/* Common text colors */
+[data-theme="dark"] .text-slate-950,
+[data-theme="dark"] .text-slate-900,
+[data-theme="dark"] .text-slate-800,
+[data-theme="dark"] .text-slate-700,
+[data-theme="dark"] .text-slate-600,
+[data-theme="dark"] .text-slate-500,
+[data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-gray-700,
+[data-theme="dark"] .text-gray-600 {
+    color: var(--theme-text) !important;
+}
+
+/* Borders */
+[data-theme="dark"] .border,
+[data-theme="dark"] [class*="border-slate-"],
+[data-theme="dark"] [class*="border-gray-"] {
+    border-color: var(--theme-border) !important;
+}
+
+/* Forms */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+    background-color: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
