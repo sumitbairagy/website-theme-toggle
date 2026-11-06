@@ -1,77 +1,190 @@
+/* =====================================
+   UNIVERSAL THEME SWITCHER
+   ===================================== */
+
+/* Light Theme */
 :root {
     color-scheme: light;
 
     --theme-bg: #ffffff;
     --theme-surface: #f8fafc;
+    --theme-card: #ffffff;
     --theme-text: #20252d;
     --theme-muted: #64748b;
     --theme-border: #e2e8f0;
+    --theme-input: #ffffff;
 }
 
+/* Dark Theme */
 [data-theme="dark"] {
     color-scheme: dark;
 
     --theme-bg: #0f172a;
     --theme-surface: #1e293b;
+    --theme-card: #1e293b;
     --theme-text: #f1f5f9;
     --theme-muted: #94a3b8;
     --theme-border: #334155;
+    --theme-input: #1e293b;
 }
 
-html, body {
+/* =====================================
+   GLOBAL
+   ===================================== */
+
+html,
+body {
     background-color: var(--theme-bg) !important;
     color: var(--theme-text) !important;
 }
 
-body, header, footer, main, section, nav, article, aside {
+body {
     transition: background-color .3s ease, color .3s ease;
 }
 
-[data-theme="dark"] body,
+header,
+main,
+section,
+nav,
+article,
+aside,
+footer {
+    transition: background-color .3s ease, color .3s ease;
+}
+
+/* =====================================
+   DARK BACKGROUNDS
+   ===================================== */
+
 [data-theme="dark"] header,
-[data-theme="dark"] footer,
-[data-theme="dark"] main,
 [data-theme="dark"] section,
-[data-theme="dark"] nav,
+[data-theme="dark"] main,
 [data-theme="dark"] article,
 [data-theme="dark"] aside {
     background-color: var(--theme-bg);
-    color: var(--theme-text);
 }
 
-/* Common backgrounds */
 [data-theme="dark"] .bg-white,
+[data-theme="dark"] .bg-white\/95,
 [data-theme="dark"] .bg-slate-50,
 [data-theme="dark"] .bg-gray-50,
 [data-theme="dark"] .bg-gray-100 {
     background-color: var(--theme-surface) !important;
 }
 
-/* Common text colors */
+/* Cards */
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .skill-item {
+    background-color: var(--theme-card) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Custom profile card */
+[data-theme="dark"] .profile-card {
+    background: var(--theme-surface) !important;
+    border-color: var(--theme-border) !important;
+}
+
+/* Hero background */
+[data-theme="dark"] .hero-bg {
+    background: var(--theme-bg) !important;
+}
+
+/* Pastel backgrounds */
+[data-theme="dark"] .bg-blue-50,
+[data-theme="dark"] .bg-purple-50,
+[data-theme="dark"] .bg-green-50 {
+    background-color: #263750 !important;
+}
+
+/* Project gradient backgrounds */
+[data-theme="dark"] [class*="bg-gradient-to-br"] {
+    background: #263750 !important;
+}
+
+/* =====================================
+   TEXT COLORS
+   ===================================== */
+
 [data-theme="dark"] .text-slate-950,
 [data-theme="dark"] .text-slate-900,
 [data-theme="dark"] .text-slate-800,
 [data-theme="dark"] .text-slate-700,
 [data-theme="dark"] .text-slate-600,
-[data-theme="dark"] .text-slate-500,
 [data-theme="dark"] .text-gray-900,
+[data-theme="dark"] .text-gray-800,
 [data-theme="dark"] .text-gray-700,
 [data-theme="dark"] .text-gray-600 {
     color: var(--theme-text) !important;
 }
 
-/* Borders */
+[data-theme="dark"] .text-slate-500,
+[data-theme="dark"] .text-slate-400,
+[data-theme="dark"] .text-gray-500 {
+    color: var(--theme-muted) !important;
+}
+
+/* Keep accent colors */
+[data-theme="dark"] .text-blue-600,
+[data-theme="dark"] .text-blue-700,
+[data-theme="dark"] .text-purple-600,
+[data-theme="dark"] .text-green-600 {
+    color: inherit;
+}
+
+/* Preserve gradient text */
+[data-theme="dark"] .gradient-text {
+    background: linear-gradient(90deg, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+
+/* =====================================
+   BORDERS
+   ===================================== */
+
 [data-theme="dark"] .border,
 [data-theme="dark"] [class*="border-slate-"],
 [data-theme="dark"] [class*="border-gray-"] {
     border-color: var(--theme-border) !important;
 }
 
-/* Forms */
+/* =====================================
+   FORMS
+   ===================================== */
+
 [data-theme="dark"] input,
 [data-theme="dark"] textarea,
-[data-theme="dark"] select {
-    background-color: var(--theme-surface) !important;
+[data-theme="dark"] select,
+[data-theme="dark"] .form-input {
+    background-color: var(--theme-input) !important;
     color: var(--theme-text) !important;
     border-color: var(--theme-border) !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: var(--theme-muted) !important;
+}
+
+/* =====================================
+   FOOTER
+   ===================================== */
+
+[data-theme="dark"] footer {
+    background-color: #080f1e !important;
+    color: #f1f5f9 !important;
+}
+
+/* =====================================
+   HOVER EFFECTS
+   ===================================== */
+
+[data-theme="dark"] .skill-item:hover {
+    background-color: #263750 !important;
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
 }
